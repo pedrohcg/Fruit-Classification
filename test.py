@@ -3,7 +3,7 @@ from pathlib import Path
 import tensorflow as tf
 
 img_size = 64
-batch_size = 128
+batch_size = 32
 
 def get_image(image, type):
     image = tf.io.read_file(image)

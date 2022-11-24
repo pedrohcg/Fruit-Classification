@@ -27,13 +27,13 @@ test_types = list(map(lambda x : get_type(x), test_image_paths))
 
 Le.fit_transform(test_types)
 
-modelPath = "./best_model-40.h5"
+modelPath = "./best_model-30-92.h5"
 model = tf.keras.models.load_model(modelPath)
 
 types = Le.transform(test_types)
 types = tf.keras.utils.to_categorical(types)
 
-image = get_image("Red_Apple.jpg")
+image = get_image("orange.jpg")
 
 prediction = model.predict(image)
 prediction = np.argmax(prediction, axis=1)
